@@ -1,0 +1,7 @@
+{
+  "name": "elynch303.github.io",
+  "version": "0.0.1",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5"
+  }
+}
