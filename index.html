@@ -12,11 +12,35 @@
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="images/win8-tile-icon.png">
         <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
-        <script type="text/javascript" src="js/parse-1.4.2.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
         <title> </title>
     </head>
     <body>
 Hello World
+<script type="text/javascript">
+    Parse.initialize("FCeUJN8wno8Vwl8CcYWSjHQl1cm2aXJFuFDjEanh", "MTYp5dfr9Ak4jho7amPs7jmjuXgX2SSa9ZFy0rFs");
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+    var dimensions = {
+      // What type of news is this? 
+      category: 'politics',
+      // Is it a weekday or a weekend?
+      dayType: 'weekday'
+    };
+    // Send the dimensions to Parse along with the 'search' event
+ 
+Parse.Analytics.track('read', dimensions)
+  </script>
     </body>
 </html>
 
